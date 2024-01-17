@@ -4,7 +4,8 @@
 
 function inserisciParola() {
   let inputWord;
-  while (typeof inputWord != "string" && !inputWord) {
+  // inserimento input utente
+  while (!isNaN(parseInt(inputWord)) || !inputWord) {
     inputWord = prompt("Scrivimi una Parola: Ti dirò se è palindroma");
   }
   return inputWord;
