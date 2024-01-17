@@ -1,5 +1,5 @@
 /**
- *@returns {string} inputWord Parola Inserita dall'utente
+ * @returns {string} inputWord Parola Inserita dall'utente
  */
 
 function inserisciParola() {
