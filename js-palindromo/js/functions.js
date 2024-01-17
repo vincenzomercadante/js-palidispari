@@ -4,7 +4,7 @@
 
 function inserisciParola() {
   let inputWord;
-  while (!inputWord) {
+  while (typeof inputWord != "string" && !inputWord) {
     inputWord = prompt("Scrivimi una Parola: Ti dirò se è palindroma");
   }
   return inputWord;
