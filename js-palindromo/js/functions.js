@@ -6,7 +6,8 @@ function inserisciParola() {
   let inputWord;
   // inserimento input utente
   while (!isNaN(parseInt(inputWord)) || !inputWord) {
-    inputWord = prompt("Scrivimi una Parola: Ti dirò se è palindroma");
+    inputWord = prompt("Scrivimi una Parola: Ti dirò se è palindroma").trim()
+      .toLowerCase;
   }
   return inputWord;
 }
@@ -23,7 +24,7 @@ function reverseWord(word) {
   for (let i = word.length - 1; i >= 0; i--) {
     invertedWord += word[i];
   }
-  return invertedWord.toLowerCase();
+  return invertedWord;
 }
 
 /**
@@ -35,9 +36,11 @@ function reverseWord(word) {
  */
 
 function palindromeCheck(normalWord, invertedWord) {
-  let isPalindrome = true;
-  for (let i = 0; i < normalWord.length && isPalindrome; i++) {
-    if (normalWord[i] != invertedWord[i]) isPalindrome = false;
+  let isPalindrome;
+  if (normalWord == invertedWord) {
+    isPalindrome = true;
+  } else {
+    isPalindrome = false;
   }
   return isPalindrome;
 }
