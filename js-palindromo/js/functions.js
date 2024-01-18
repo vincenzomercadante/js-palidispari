@@ -36,11 +36,6 @@ function reverseWord(word) {
  */
 
 function palindromeCheck(normalWord, invertedWord) {
-  let isPalindrome;
-  if (normalWord == invertedWord) {
-    isPalindrome = true;
-  } else {
-    isPalindrome = false;
-  }
+  let isPalindrome = normalWord == invertedWord ? true : false;
   return isPalindrome;
 }
