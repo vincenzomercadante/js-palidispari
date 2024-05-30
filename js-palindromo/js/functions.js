@@ -6,8 +6,7 @@ function inserisciParola() {
   let inputWord;
   // inserimento input utente
   while (!isNaN(parseInt(inputWord)) || !inputWord) {
-    inputWord = prompt("Scrivimi una Parola: Ti dirò se è palindroma").trim()
-      .toLowerCase;
+    inputWord = prompt("Scrivimi una Parola: Ti dirò se è palindroma").trim().toLowerCase();
   }
   return inputWord;
 }

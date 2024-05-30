@@ -1,7 +1,6 @@
 /**
  *
- * @return {string} userChoice Scelta di pari o dispari
- *
+ * @return {string} userChoice user that choose between odd or even
  *
  */
 function userChoices() {
@@ -15,7 +14,7 @@ function userChoices() {
 
 /**
  *
- * @returns {number} userNumber numero scelto dall'utente
+ * @returns {number} userNumber number typed by user
  *
  */
 function userNumberChoices() {
@@ -28,12 +27,11 @@ function userNumberChoices() {
 
 /**
  *
- * @returns {number} generateNumber numero generato casualmente
+ * @returns {number} generateNumber number generated randomly
  *
  */
 function randomNumber() {
   const generateNumber = Math.floor(Math.random() * 5 - 1);
-  console.log(generateNumber);
   return generateNumber;
 }
 
@@ -42,7 +40,7 @@ function randomNumber() {
  * @param {number} userNumber
  * @param {number} computerNumber
  *
- * @returns {number} sum somma dei due numeri
+ * @returns {number} sum of the two numbers
  *
  */
 function sumCalculator(userNumber, computerNumber) {
@@ -55,18 +53,19 @@ function sumCalculator(userNumber, computerNumber) {
  * @param {string} userChoice
  * @param {number} sum
  *
- * @returns {string} winner nome vincitore
+ * @returns {string} winner winner's name
  *
  */
 function winnerCheck(userChoice, sum) {
-  let winner;
-  if (
-    (userChoice === "pari" && sum % 2 == 0) ||
-    (userChoice === "dispari" && sum % 2 != 0)
-  ) {
-    winner = "USER";
-  } else {
-    winner = "COMPUTER";
-  }
+  const winner = userChoice === 'pari' && isEven(sum) || userChoice === 'dispari' && !isEven(sum) ? "USER" : "COMPUTER";
   return winner;
+}
+
+/**
+ * 
+ * @param {number} sum sum between the two number
+ * @returns true if sum is even otherwise false if is odd
+ */
+function isEven(sum){
+  return sum % 2 == 0
 }
